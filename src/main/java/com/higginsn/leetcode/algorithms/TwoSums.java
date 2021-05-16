@@ -1,4 +1,4 @@
-package com.higginsn.leetcode;
+package com.higginsn.leetcode.algorithms;
 
 public class TwoSums {
 

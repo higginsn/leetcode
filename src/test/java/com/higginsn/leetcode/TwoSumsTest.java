@@ -1,5 +1,6 @@
 package com.higginsn.leetcode;
 
+import com.higginsn.leetcode.algorithms.TwoSums;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
