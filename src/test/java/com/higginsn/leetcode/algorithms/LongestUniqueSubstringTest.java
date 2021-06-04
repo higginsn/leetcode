@@ -2,9 +2,9 @@ package com.higginsn.leetcode.algorithms;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class LongestUniqueSubstringTest {
+public class LongestUniqueSubstringTest {
 
     private final LongestUniqueSubstring sut = new LongestUniqueSubstring();
 
