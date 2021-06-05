@@ -1,4 +1,4 @@
-package com.higginsn.leetcode.algorithms;
+package com.higginsn.leetcode.algorithms.medium;
 
 import java.util.HashSet;
 import java.util.Set;

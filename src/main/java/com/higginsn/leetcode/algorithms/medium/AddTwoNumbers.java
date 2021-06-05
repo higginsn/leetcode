@@ -1,4 +1,4 @@
-package com.higginsn.leetcode.algorithms;
+package com.higginsn.leetcode.algorithms.medium;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

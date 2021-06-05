@@ -1,4 +1,4 @@
-package com.higginsn.leetcode.algorithms;
+package com.higginsn.leetcode.algorithms.easy;
 
 /**
  * https://leetcode.com/problems/roman-to-integer/

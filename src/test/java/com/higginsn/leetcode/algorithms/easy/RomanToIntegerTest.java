@@ -1,4 +1,4 @@
-package com.higginsn.leetcode.algorithms;
+package com.higginsn.leetcode.algorithms.easy;
 
 import org.junit.jupiter.api.Test;
 
