@@ -1,5 +1,7 @@
 package com.higginsn.leetcode.algorithms.models;
 
+import java.util.Objects;
+
 public class TreeNode {
     public int val;
     public TreeNode left;
@@ -16,6 +18,23 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        TreeNode t = (TreeNode) o;
+
+        return val == t.val
+                && Objects.equals(left, t.left)
+                && Objects.equals(right, t.right);
     }
 
 }
