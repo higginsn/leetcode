@@ -1,8 +1,8 @@
 package com.higginsn.leetcode.algorithms.medium;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * https://leetcode.com/problems/course-schedule/
@@ -29,32 +29,44 @@ public class CourseSchedule {
     }
 
     public boolean canFinish(int numCourses, int[][] prereqs) {
-        List<List<Node>> adjList = new ArrayList<>(Collections.nCopies(numCourses, new ArrayList<>()));
+        List<List<Node>> adjList = new ArrayList<>();
+        IntStream.range(0, numCourses).forEach(i -> adjList.add(new ArrayList<>()));
 
         for (int[] prereq : prereqs) {
             assert(prereq.length == 2);
             adjList.get(prereq[1]).add(new Node(prereq[0]));
         }
 
+        boolean success = true;
+        boolean[] visited = new boolean[adjList.size()];
         for (int i = 0; i < adjList.size(); i++) {
-            visitChildren(i, adjList);
+            boolean[] visitedThisDFS = new boolean[adjList.size()];
+            success = success && visitChildren(i, adjList, visited, visitedThisDFS);
         }
 
-
-        return false;
+        return success;
     }
 
-    private boolean visitChildren(int index, List<List<Node>> adjList) {
-        for (Node edge : adjList.get(index)) {
-            if (edge.visited) {
+    private boolean visitChildren(int index, List<List<Node>> adjList, boolean[] visited, boolean[] visitedThisDFS) {
+        if (visitedThisDFS[index]) {
+            // Cycle found!
+            return false;
+        }
+        visitedThisDFS[index] = true;
+
+        for (Node node : adjList.get(index)) {
+            if (visited[index]) {
+                // This is to prune DFS so it does not get stuck in a loop anywhere
                 return true;
             }
 
-            edge.setVisited();
-            visitChildren(edge.courseId, adjList);
+            visited[index] = true;
+            boolean success = visitChildren(node.courseId, adjList, visited, visitedThisDFS);
+            if (!success) {
+                return false;
+            }
         }
-        return false; // how do you detect a cycle? a directed graph can have two edges pointing to the same node
-        // and it wouldn't necessarily be a cycle
+        return true;
     }
 
 }
