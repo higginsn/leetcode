@@ -1,8 +1,6 @@
-package com.higginsn.leetcode.algorithms.medium;
+package com.higginsn.leetcode.algorithms.google.linkedlists;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.higginsn.leetcode.algorithms.models.ListNode;
 
 /**
  * https://leetcode.com/problems/add-two-numbers/
@@ -60,29 +58,7 @@ public class AddTwoNumbers {
     }
 
 
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Getter
-    public static class ListNode {
-        private int val;
-        private ListNode next;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int[] values) {
-            ListNode head = null;
-            for (int value : values) {
-                ListNode node = new ListNode(value, head);
-                head = node;
-            }
-
-            this.val = head.val;
-            this.next = head.next;
-        }
-    }
-    public boolean compareListNodes(AddTwoNumbers.ListNode l1, AddTwoNumbers.ListNode l2) {
+    public boolean compareListNodes(ListNode l1, ListNode l2) {
         System.out.println(String.format("l1.val = %d, l2.val = %d", l1.val, l2.val));
         if (l1.val != l2.val) {
             return false;
