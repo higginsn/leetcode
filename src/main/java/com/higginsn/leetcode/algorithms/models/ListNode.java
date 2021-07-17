@@ -3,6 +3,9 @@ package com.higginsn.leetcode.algorithms.models;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 @NoArgsConstructor
 @AllArgsConstructor
 public class ListNode {
@@ -14,15 +17,33 @@ public class ListNode {
         this.val = val;
     }
 
-    public ListNode(int[] values) {
+    public ListNode(int... values) {
+        assert(values.length > 0);
+
         ListNode head = null;
-        for (int value : values) {
-            ListNode node = new ListNode(value, head);
-            head = node;
+        int[] array = Arrays.stream(values).toArray();
+        for (int i = array.length - 1; i >= 0; i--) {
+            head = new ListNode(array[i], head);
         }
 
         this.val = head.val;
         this.next = head.next;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        ListNode t = (ListNode) o;
+
+        return val == t.val
+                && Objects.equals(next, t.next);
     }
 
 }

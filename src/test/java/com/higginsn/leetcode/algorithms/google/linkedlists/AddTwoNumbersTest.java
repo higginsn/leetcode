@@ -3,8 +3,6 @@ package com.higginsn.leetcode.algorithms.google.linkedlists;
 import com.higginsn.leetcode.algorithms.models.ListNode;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AddTwoNumbersTest {
@@ -13,48 +11,44 @@ class AddTwoNumbersTest {
 
     @Test
     public void addingLargeNodesExpectSingleCarryOver() {
-        ListNode l1 = arrangeListNode(3, 4, 2);
-        ListNode l2 = arrangeListNode(4, 6, 5);
+        ListNode l1 = new ListNode(2, 4, 3);
+        ListNode l2 = new ListNode(5, 6, 4);
 
-        ListNode expected = arrangeListNode(8, 0, 7);
+        ListNode expected = new ListNode(7, 0, 8);
         assertTrue(sut.compareListNodes(expected, sut.addTwoNumbers(l1, l2)));
     }
 
     @Test
     public void addingZerosExpectZero() {
-        ListNode zero = arrangeListNode(0);
+        ListNode zero = new ListNode(0);
 
         assertTrue(sut.compareListNodes(zero, sut.addTwoNumbers(zero, zero)));
     }
 
     @Test
     public void addingLargeNodesExpectCarryOverUntilEndOfList() {
-        ListNode l1 = arrangeListNode(9, 9, 9, 9, 9, 9, 9);
-        ListNode l2 = arrangeListNode(9, 9, 9, 9);
+        ListNode l1 = new ListNode(9, 9, 9, 9, 9, 9, 9);
+        ListNode l2 = new ListNode(9, 9, 9, 9);
 
-        ListNode expected = arrangeListNode(1, 0, 0, 0, 9, 9, 9, 8);
+        ListNode expected = new ListNode(8, 9, 9, 9, 0, 0, 0, 1);
         assertTrue(sut.compareListNodes(expected, sut.addTwoNumbers(l1, l2)));
     }
 
     @Test
     public void addingLargeNumbersAtEndOfBothListsExpectNewNodeCreated() {
-        ListNode l1 = arrangeListNode(9);
+        ListNode l1 = new ListNode(9);
 
-        ListNode expected = arrangeListNode(1, 8);
+        ListNode expected = new ListNode(8, 1);
         assertTrue((sut.compareListNodes(expected, sut.addTwoNumbers(l1, l1))));
     }
 
     @Test
     public void failure1() {
-        ListNode l1 = arrangeListNode(1, 9, 9);
-        ListNode l2 = arrangeListNode(1);
+        ListNode l1 = new ListNode(9, 9, 1);
+        ListNode l2 = new ListNode(1);
 
-        ListNode expected = arrangeListNode(2, 0, 0);
+        ListNode expected = new ListNode(0, 0, 2);
         assertTrue(sut.compareListNodes(expected, sut.addTwoNumbers(l1, l2)));
     }
-
-    private ListNode arrangeListNode(int... values) {
-        return new ListNode(Arrays.stream(values).toArray());
-    }
-
+    
 }
