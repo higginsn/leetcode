@@ -1,4 +1,4 @@
-package com.higginsn.leetcode.algorithms.medium;
+package com.higginsn.leetcode.algorithms.google.arrays;
 
 import org.junit.jupiter.api.Test;
 
