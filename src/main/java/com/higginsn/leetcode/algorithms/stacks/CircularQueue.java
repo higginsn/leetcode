@@ -1,5 +1,8 @@
 package com.higginsn.leetcode.algorithms.stacks;
 
+/**
+ * https://leetcode.com/explore/learn/card/queue-stack/228/first-in-first-out-data-structure/1337/
+ */
 public class CircularQueue {
 
     int[] data;
@@ -7,7 +10,7 @@ public class CircularQueue {
     int tailIndex = -1;
     int size;
 
-    public MyCircularQueue(int k) {
+    public CircularQueue(int k) {
         data = new int[k];
         size = k;
     }

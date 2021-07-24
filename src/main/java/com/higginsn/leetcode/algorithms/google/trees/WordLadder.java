@@ -2,8 +2,12 @@ package com.higginsn.leetcode.algorithms.google.trees;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 /**
  * https://leetcode.com/problems/word-ladder/
@@ -23,13 +27,31 @@ public class WordLadder {
         });
 
         int depth = 0;
-        List<String> currentDepth = new ArrayList<>();
-        currentDepth.add(beginWord);
-        List<String> currentPath = new ArrayList<>();
-        while (!currentDepth.isEmpty()) {
+        Set<String> visited = new HashSet<>();
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+
+        while (!queue.isEmpty()) {
             depth++;
 
-            List<String>
+            int numberOfNodes = queue.size();
+            for (int i = 0; i < numberOfNodes; i++) {
+                String word = queue.poll();
+                if (word.equals(endWord)) {
+                    return depth;
+                }
+
+                List<String> variants = computeVariants(word);
+                for (String variant : variants) {
+                    mapOfVariantsToWords.getOrDefault(variant, new ArrayList<>())
+                            .stream()
+                            .filter(nextWord -> !visited.contains(nextWord))
+                            .forEach(nextWord -> {
+                                queue.offer(nextWord);
+                                visited.add(nextWord);
+                            });
+                }
+            }
         }
 
         return 0;
