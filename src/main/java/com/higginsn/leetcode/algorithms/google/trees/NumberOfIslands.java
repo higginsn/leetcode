@@ -1,7 +1,8 @@
 package com.higginsn.leetcode.algorithms.google.trees;
 
+import com.higginsn.leetcode.algorithms.models.Position;
+
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
@@ -11,21 +12,6 @@ public class NumberOfIslands {
 
     private static final char WATER = '0';
     private static final char LAND = '1';
-
-    private class Position {
-        public int row;
-        public int col;
-
-        public Position(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
-
-        public List<Position> possibleMovements() {
-            return List.of(new Position(row - 1, col), new Position(row + 1, col),
-                    new Position(row, col - 1), new Position(row, col + 1));
-        }
-    }
 
     public int numIslands(char[][] grid) {
         int islandCounter = 0;

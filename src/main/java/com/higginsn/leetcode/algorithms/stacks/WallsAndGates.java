@@ -1,5 +1,7 @@
 package com.higginsn.leetcode.algorithms.stacks;
 
+import com.higginsn.leetcode.algorithms.models.Position;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -46,36 +48,6 @@ public class WallsAndGates {
         return position.x >= 0 && position.x < rooms.length
                 && position.y >= 0 && position.y < rooms[0].length
                 && rooms[position.x][position.y] == EMPTY;
-    }
-
-    private class Position {
-        public int x;
-        public int y;
-
-        public Position(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public List<Position> possibleMoves() {
-            return List.of(moveLeft(), moveRight(), moveUp(), moveDown());
-        }
-
-        private Position moveLeft() {
-            return new Position(x - 1, y);
-        }
-
-        private Position moveRight() {
-            return new Position(x + 1, y);
-        }
-
-        private Position moveUp() {
-            return new Position(x, y - 1);
-        }
-
-        private Position moveDown() {
-            return new Position(x, y + 1);
-        }
     }
 
 }
