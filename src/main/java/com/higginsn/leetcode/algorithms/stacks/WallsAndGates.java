@@ -37,7 +37,7 @@ public class WallsAndGates {
                         .filter(position -> isValidPosition(position, rooms))
                         .collect(Collectors.toList());
                 for (Position position : possibilities) {
-                    rooms[position.x][position.y] = level;
+                    rooms[position.row][position.col] = level;
                     queue.offer(position);
                 }
             }
