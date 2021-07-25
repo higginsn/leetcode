@@ -33,7 +33,7 @@ public class WallsAndGates {
             for (int i = 0; i < size; i++) {
                 Position room = queue.poll();
 
-                List<Position> possibilities = room.possibleMoves().stream()
+                List<Position> possibilities = room.possibleMovements().stream()
                         .filter(position -> isValidPosition(position, rooms))
                         .collect(Collectors.toList());
                 for (Position position : possibilities) {
@@ -45,9 +45,9 @@ public class WallsAndGates {
     }
 
     private boolean isValidPosition(Position position, int[][] rooms) {
-        return position.x >= 0 && position.x < rooms.length
-                && position.y >= 0 && position.y < rooms[0].length
-                && rooms[position.x][position.y] == EMPTY;
+        return position.row >= 0 && position.row < rooms.length
+                && position.col >= 0 && position.col < rooms[0].length
+                && rooms[position.row][position.col] == EMPTY;
     }
 
 }
