@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class TwoSumsTest {
+class TwoSumsTestTest {
 
     private final TwoSums sut = new TwoSums();
 

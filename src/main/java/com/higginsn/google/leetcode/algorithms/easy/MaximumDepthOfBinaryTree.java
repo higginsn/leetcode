@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.easy;
 
-import com.higginsn.google.leetcode.algorithms.models.TreeNode;
+import com.higginsn.models.TreeNode;
 
 /**
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/

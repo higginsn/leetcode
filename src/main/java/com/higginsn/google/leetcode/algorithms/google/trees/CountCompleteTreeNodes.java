@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.google.trees;
 
-import com.higginsn.google.leetcode.algorithms.models.TreeNode;
+import com.higginsn.models.TreeNode;
 
 /**
  * https://leetcode.com/explore/interview/card/google/61/trees-and-graphs/3071/

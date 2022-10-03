@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.recursion;
 
-import com.higginsn.google.leetcode.algorithms.models.TreeNode;
+import com.higginsn.models.TreeNode;
 
 /**
  * https://leetcode.com/problems/search-in-a-binary-search-tree/

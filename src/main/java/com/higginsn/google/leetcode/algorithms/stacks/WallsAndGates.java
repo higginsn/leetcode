@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.stacks;
 
-import com.higginsn.google.leetcode.algorithms.models.Position;
+import com.higginsn.models.Position;
 
 import java.util.LinkedList;
 import java.util.List;

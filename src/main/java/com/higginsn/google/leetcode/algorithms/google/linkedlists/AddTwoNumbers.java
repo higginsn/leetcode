@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.google.linkedlists;
 
-import com.higginsn.google.leetcode.algorithms.models.ListNode;
+import com.higginsn.models.ListNode;
 
 /**
  * https://leetcode.com/problems/add-two-numbers/

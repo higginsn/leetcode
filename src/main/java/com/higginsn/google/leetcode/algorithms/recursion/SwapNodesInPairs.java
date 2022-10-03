@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.recursion;
 
-import com.higginsn.google.leetcode.algorithms.models.ListNode;
+import com.higginsn.models.ListNode;
 
 /**
  * https://leetcode.com/problems/swap-nodes-in-pairs/

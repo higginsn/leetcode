@@ -1,7 +1,7 @@
 package com.higginsn.google.leetcode.algorithms.recursion;
 
-import com.higginsn.google.leetcode.algorithms.models.Position;
-import com.higginsn.google.leetcode.algorithms.models.Robot;
+import com.higginsn.models.Position;
+import com.higginsn.models.Robot;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.recursion;
 
-import com.higginsn.google.leetcode.algorithms.models.TreeNode;
+import com.higginsn.models.TreeNode;
 
 /**
  * https://leetcode.com/explore/learn/card/recursion-ii/470/divide-and-conquer/2874/

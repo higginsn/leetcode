@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.medium;
 
-import com.higginsn.google.leetcode.algorithms.models.TreeNode;
+import com.higginsn.models.TreeNode;
 
 /**
  * https://leetcode.com/problems/count-univalue-subtrees/

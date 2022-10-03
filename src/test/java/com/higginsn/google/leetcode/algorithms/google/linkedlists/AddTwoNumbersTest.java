@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.google.linkedlists;
 
-import com.higginsn.google.leetcode.algorithms.models.ListNode;
+import com.higginsn.models.ListNode;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,4 +1,4 @@
-package com.higginsn.google.leetcode.algorithms.models;
+package com.higginsn.models;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

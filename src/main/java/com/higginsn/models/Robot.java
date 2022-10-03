@@ -1,4 +1,4 @@
-package com.higginsn.google.leetcode.algorithms.models;
+package com.higginsn.models;
 
 /**
  * This is the robot's control interface. Do not implement it or speculate about its implementation.

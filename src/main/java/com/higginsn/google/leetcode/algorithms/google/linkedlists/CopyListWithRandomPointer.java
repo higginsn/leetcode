@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.google.linkedlists;
 
-import com.higginsn.google.leetcode.algorithms.models.Node;
+import com.higginsn.models.Node;
 
 /**
  * https://leetcode.com/problems/copy-list-with-random-pointer/

@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.google.arrays;
 
-import com.higginsn.google.leetcode.algorithms.models.ListNode;
+import com.higginsn.models.ListNode;
 
 /**
  * https://leetcode.com/problems/merge-k-sorted-lists

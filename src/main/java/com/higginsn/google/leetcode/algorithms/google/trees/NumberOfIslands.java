@@ -1,6 +1,6 @@
 package com.higginsn.google.leetcode.algorithms.google.trees;
 
-import com.higginsn.google.leetcode.algorithms.models.Position;
+import com.higginsn.models.Position;
 
 import java.util.LinkedList;
 import java.util.Queue;
