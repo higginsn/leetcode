@@ -1,0 +1,59 @@
+https://leetcode.com/explore/featured/card/heap/643/heap/4018/
+
+Heap explore notes 2022-10-05
+
+Heap definition
+- Heap is not a priority queue, but a mechanism to implement one
+- By rule, a heap must be a complete binary tree and the value of each node must be no >= (or <=)
+  than the value of all of its child nodes
+- Construction: O(n) time and O(n) space
+- Insertion: O(log(n)) time and O(1) space
+- Deletion: O(log(n)) time and O(1) space
+- Get top element: O(1)
+- Get size: O(1)
+
+Heap Sort
+- Similar to selection sort, basically build a heap out of a list, then take nodes from heap
+- O(n) to build heap, O(log(n)) to find the next element in list, therefore O(n*log(n)) complexity
+- O(1) since the array can be indexed to simulate a heap.
+  - If parent node is index i, left child is 2i+1, right child is 2i+2 (with 0-indexing)
+
+The Top K Problem O(klogn+n)
+- Use a heap to obtain top k's largest or smallest elements
+- Solution for largest
+  1. Construct a max heap
+  2. add all elements to max heap
+  3. traverse and delete top element, store value into result
+  4. repeat step 3 until k
+- O(k*log(n) + n) time, the former to extract k elements and the latter to build heap
+- O(n) space complexity to store elements in heap
+
+The Top K Problem O(nlogk)
+- Use a heap to obtain top k's largest elements
+- Use a min heap (above uses max)
+  1. construct a min heap of size k
+  2. add k arbitrary elements to tree
+  3. if (next element > minHeap.top())
+     - true: remove top element, add next element
+     - false: skip next element
+  4. repeat step 3 for remaining elements
+- O(n*log(k)) time, log(k) b/c only k elements are stored in the heap, n for iterating the list
+- O(k) space to store k elements in heap
+
+The K-th element
+- Use a heap to obtain the k-th largest element
+  1. Construct a max heap
+  2. add all elements to max heap
+  3. traverse and delete top element k times
+- O(k*log(n) + n) time, the former to remove k elements, the latter to build the heap
+- O(n) space
+
+- Alternative solution for k-th largest
+  1. Construct a min heap (above uses max) with size k
+  2. add k elements to heap
+  3. if (next element > minHeap.top())
+     - true: delete top and add next element
+     - false: skip next element
+  4. repeat step 3 for remaining elements
+- O(n*log(k)) time, log(k) b/c only k elements are stored in the heap, n for iterating the list
+- O(k) space to store k elements in heap
