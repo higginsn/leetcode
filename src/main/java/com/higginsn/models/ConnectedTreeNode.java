@@ -5,9 +5,19 @@ import java.util.Objects;
 public class ConnectedTreeNode extends TreeNode {
     public TreeNode next;
 
-    public ConnectedTreeNode(int val, TreeNode next) {
-        this(val, null, null, next);
+    public ConnectedTreeNode(int val) {
+        super(val);
     }
+
+    public ConnectedTreeNode(int val, TreeNode next) {
+        super(val, null, null);
+        this.next = next;
+    }
+
+    public ConnectedTreeNode(int val, TreeNode left, TreeNode right) {
+        super(val, left, right);
+    }
+
     public ConnectedTreeNode(int val, TreeNode left, TreeNode right, TreeNode next) {
         super(val, left, right);
         this.next = next;
